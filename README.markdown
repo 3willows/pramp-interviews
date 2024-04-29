@@ -1,0 +1,1 @@
+These are my notes as I prepare to assess my peers on [Pramp](https://www.pramp.com/) interviews!
