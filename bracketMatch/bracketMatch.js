@@ -1,20 +1,23 @@
 function bracketMatch(text) {
-  let loneOpening = 0
-  let reqiuredOpening = 0
-  for (let i = 0; i < text.length; i++) {
-    if (Array.from(text)[i] === "(") {
-      loneOpening++
+  let needsClosing = 0
+  let needsOpening = 0
+  for (let char of text) {
+    if (char === "(") {
+      needsClosing++
     }
-    if (Array.from(text)[i] === ")") {
-      if (loneOpening > 0){
-        loneOpening--
-      }
-      else reqiuredOpening++
+    if (char === ")") {
+      if (needsClosing > 0) {
+        needsClosing--
+      } else needsOpening++
     }
   }
-  // console.log(`lone opening: ${reqiuredOpening}`)
-  // console.log(`required opening: ${reqiuredOpening}`)
-  return Math.abs(loneOpening + reqiuredOpening)
+  if (needsClosing) {
+    console.log(`closing brackets that needs opening: ${ needsOpening}`)
+  }
+  if (needsOpening) {
+    console.log(`open brackets that needs closing: ${needsClosing}`)
+  }
+  return needsClosing + needsOpening
 }
 
 // This satisfies Pramp's 8 tests.  Is it guaranteed to work, e.g. by way of some proof?
