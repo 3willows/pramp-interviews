@@ -16,17 +16,17 @@ flip(arr, 2)
 // array should be mutated to [2, 3, 5]
 ```
 
-(2) Create a pancakeSort function that uses the flip function and sorts an array from lowest to highest
+(2) Create a pancakeSort function that uses the flip function and sorts an array from lowest to highest.
 
 NB: you also need an ancilliary function! It needs to give you the index of the largest element in the first k elements of the array. E.g.
 ```js
 
 let arr = [2, 5, 3, 10]
 largestElement(arr, 3)
-// return value should be the 2nd element, 5.
+// return value should be 1, because the largest value the 2nd element (arr[1] because the 1st element is arr[0]), 5.
 ```
 
-Key idea to the solutions:-
+Key idea to the solutions:
 
 (1) You need a temporary variable to store the value to be flipped.  Also think about situations when the length of array is odd and length of array is even!
 
