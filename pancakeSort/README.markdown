@@ -23,11 +23,15 @@ NB: you also need an ancilliary function! It needs to give you the index of the 
 
 let arr = [2, 5, 3, 10]
 largestElement(arr, 3)
-// return value of largestElement(arr, 3) should be the 3rd element, 5.
+// return value of largestElement(arr, 3) should be the 2nd element, 5.
 ```
 
 Key idea to the solutions:-
 
 (1) You need a temporary variable to store the value to be flipped.  Also think about situations when the length of array is odd and length of array is even!
 
-(2) (a) Find the largest element.  (b) Flip that to the front of the array.  (c) Flip the whole array so that the largest comes last.  (d) Repeat, but limit your sights from the first to the second-last element of the array! 
+(2)
+- Find the largest element.  
+- Flip everyone up to that to the front of the array. 
+- Flip the whole array so that the largest is at the very end of the array.
+- Repeat, but limit your sights from the first to the second-last element of the array! 
