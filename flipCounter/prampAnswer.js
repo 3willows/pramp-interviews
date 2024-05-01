@@ -2,19 +2,19 @@ function count(digitPrefix) {
   $(".container").removeClass("play");
   var activeDigit = $("ul." + digitPrefix + " li.active");
 
-  // If no digit is active
-  // if (activeDigit.html() == undefined) {
-  //     // Activate the first digit for this counter
-  //     activeDigit = $("ul." + digitPrefix + " li").eq(0);
-  //     activeDigit.addClass("before").
-  //     removeClass("active").
-  //     next("li").
-  //     addClass("active").
-  //     closest(".container").
-  //     addClass("play");
+  //If no digit is active
+  if (activeDigit.html() == undefined) {
+      // Activate the first digit for this counter
+      activeDigit = $("ul." + digitPrefix + " li").eq(0);
+      activeDigit.addClass("before").
+      removeClass("active").
+      next("li").
+      addClass("active").
+      closest(".container").
+      addClass("play");
 
       // If the last digit is active
-  // } else 
+  } else 
   
   if (activeDigit.is(":last-child")) {
 
