@@ -1,0 +1,15 @@
+div {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  width: 100px;
+}
+
+canvas {
+  background: white;
+  border: solid 1px #002649;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px;
+}
