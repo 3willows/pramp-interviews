@@ -1,4 +1,4 @@
-Goal: create something like this [Codepen](https://codepen.io/doriancami/full/jEJvaV) in half an hour
+Goal: create something like this [Codepen](https://codepen.io/prampcontent/pen/OoLBrp) in half an hour
 
 My [code-pen](https://codepen.io/3willows/pen/MWRdyZR?editors=1000) in the hour-long preparation for the assessment
 
