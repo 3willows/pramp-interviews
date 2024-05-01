@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Event Emitter</title>
+</head>
+
+<body>
+  <script>
+    // es6 code, class, let obj = new eventEmiter() // create an instance
+    class eventEmiter {
+      constructor() { }
+      on() { }
+      once() { }
+      emit() { }
+    }
+    // Add your implementation here, and initialize eventEmitter with an actual value;
+    var eventEmitter = {
+      emit: function (a, b) { console.log(a, b) },
+      on: function (type, listenerFunction) {
+        window.addEventListener(type, listenerFunction)
+      },
+      off: function (type, listenerID) {
+        window.removeEventListener(type, listenerID)
+      },
+      emit: function (a, b) { }
+  once: function (a, b) { }
+    }
+
+
+    // relationship between responseToEvent and eventEmitter?
+    function responseToEvent(msg) {
+      console.log(msg);
+    }
+
+
+    eventEmitter.on('pramp', responseToEvent);
+    eventEmitter.off('pramp', responseToEvent);
+    eventEmitter.off('pramp', responseToEvent);
+
+    // what is emit supposed to do?
+    eventEmitter.emit('pramp', '1st');
+    eventEmitter.emit('pramp', '2nd');
+
+    eventEmitter.emit('pramp', '3rd');
+    eventEmitter.emit('pramp', '1st');
+
+    // what are once is about?
+    eventEmitter.once('pramp', function (msg) { console.log(msg + ' just once!'); });
+
+
+  </script>
+</body>
+
+</html>
