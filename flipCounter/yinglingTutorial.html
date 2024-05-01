@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Flip Counter</title>
+	<style>
+		body {
+			font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		.wrap {
+			width: 50px;
+			height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -50px 0px 0px -25px;
+		}
+
+		ul#initial {
+			list-style-type: none;
+			width: 50px;
+			height: 100px;
+			padding: 0px;
+			position: relative;
+		}
+
+		ul#initial li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-align: center;
+			width: 50px;
+		}
+
+		.first {
+			z-index: 3;
+		}
+
+		.second {
+			animation: zindex 1s 1s linear both;
+			z-index: 2;
+		}
+
+		@keyframes zindex {
+			0% {
+				z-index: 2;
+			}
+
+			5% {
+				z-index: 4;
+			}
+
+			100% {
+				z-index: 4;
+			}
+		}
+
+		.flipthis {
+			height: 50px;
+			width: 50px;
+			background: #ff0000;
+			color: #fff;
+			transform-origin: 50% 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 5px 5px 0px 0px;
+			-webkit-animation: flipthis 1s linear;
+			-moz-animation: flipthis 1s linear;
+			animation: flipthis 1s linear;
+		}
+
+		.flipthis-down {
+			height: 50px;
+			width: 50px;
+			background: #ff0000;
+			color: #fff;
+			overflow: hidden;
+			position: absolute;
+			top: auto;
+			left: 0;
+			bottom: 0;
+			border-radius: 0px 0px 5px 5px;
+		}
+
+		.digit {
+			height: 200%;
+			font-size: 80px;
+			position: absolute;
+			width: 50px;
+			text-align: center;
+			text-shadow: 0px 1px 2px rgba(224, 224, 224, 0.87);
+		}
+
+		.flipthis-down .digit {
+			bottom: 0;
+		}
+
+		.flipthis:after {
+			content: "";
+			position: absolute;
+			top: 49px;
+			left: 0;
+			z-index: 5;
+			width: 100%;
+			height: 3px;
+			background-color: rgba(255, 255, 255, .4);
+		}
+
+		@keyframes flipthis {
+			0% {
+				transform: rotateX(0deg);
+				-webkit-transform: rotateX(0deg);
+				/* Safari and Chrome */
+				-moz-transform: rotateX(0deg);
+				/* Firefox */
+			}
+
+			100% {
+				transform: rotateX(-90deg);
+				-webkit-transform: rotateX(-90deg);
+				/* Safari and Chrome */
+				-moz-transform: rotateX(-90deg);
+				/* Firefox */
+			}
+		}
+
+		.flipthis2 {
+			height: 50px;
+			width: 50px;
+			background: #ff0000;
+			color: #fff;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 5px 5px 0px 0px;
+		}
+
+		.flipthis2-down {
+			height: 50px;
+			width: 50px;
+			background: #ff0000;
+			color: #fff;
+			transform-origin: 50% 0%;
+			overflow: hidden;
+			position: absolute;
+			top: auto;
+			left: 0;
+			bottom: 0;
+			border-radius: 0px 0px 5px 5px;
+			-webkit-animation: flipthis-down 1s 1s linear;
+			-moz-animation: flipthis-down 1s 1s linear;
+			animation: flipthis-down 1s 1s linear;
+		}
+
+		.flipthis2-down .digit {
+			bottom: 0;
+		}
+
+		.flipthis2:after {
+			content: "";
+			position: absolute;
+			top: 49px;
+			left: 0;
+			z-index: 5;
+			width: 100%;
+			height: 3px;
+			background-color: rgba(255, 255, 255, .4);
+		}
+
+		@keyframes flipthis-down {
+			0% {
+				transform: rotateX(90deg);
+				-webkit-transform: rotateX(90deg);
+				/* Safari and Chrome */
+				-moz-transform: rotateX(90deg);
+				/* Firefox */
+			}
+
+			100% {
+				transform: rotateX(0deg);
+				-webkit-transform: rotateX(0deg);
+				/* Safari and Chrome */
+				-moz-transform: rotateX(0deg);
+				/* Firefox */
+			}
+		}
+
+		a.derp {
+			perspective: 200px;
+			display: block;
+			width: 50px;
+			height: 100px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div class="wrap">
+		<ul id="initial">
+			<li class="first">
+				<a class="derp">
+					<div class="flipthis">
+						<div class="digit">1</div>
+					</div>
+					<div class="flipthis-down">
+						<div class="digit">1</div>
+					</div>
+				</a>
+			</li>
+			<li class="second">
+				<a class="derp">
+					<div class="flipthis2">
+						<div class="digit">2</div>
+					</div>
+					<div class="flipthis2-down">
+						<div class="digit">2</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+
+</html>
